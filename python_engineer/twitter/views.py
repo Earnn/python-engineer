@@ -4,12 +4,15 @@ from . import configurations
 import re
 from dateutil.parser import parse
 
+# Endpoint for getting tweets by hashtag.
 @api_view(['GET'])
 def get_tweet_by_hashtag(request,hashtag):
 
 	hashtag = "#"+hashtag.lower()+ " -filter:retweets"
 
 	limit = request.query_params.get('limit',30)
+
+	# Calling twitter's API for getting tweets.
 	tweets = configurations.tweepy.Cursor(configurations.api.search,
 		q=hashtag,
 		lang="en",
@@ -17,6 +20,8 @@ def get_tweet_by_hashtag(request,hashtag):
 
 	output = []
 	accounts = {"account":""}
+	
+	# Generate response
 	for tweet in tweets:
 		temp = {"fullname":"","href":"","id":0,"hashtags":[],"date":"","likes":0,"replies":0,"retweets":0,"text":""}
 		
@@ -48,15 +53,19 @@ def get_tweet_by_hashtag(request,hashtag):
 	return Response(accounts)
 
 
-
+# Endpoint for getting tweets by user.
 @api_view(['GET'])
 def get_user_tweets(request,account_name):
 
 	account_name = "@"+account_name
 	limit = request.query_params.get('limit',30)
+
+	# Calling twitter's API for getting tweets.
 	tweets = configurations.api.user_timeline(account_name,count=int(limit))
 	output = []
 	accounts = {"account":""}
+
+	# Generate response
 	for tweet in tweets:
 		temp = {"fullname":"","href":"","id":0,"hashtags":[],"date":"","likes":0,"replies":0,"retweets":0,"text":""}
 		

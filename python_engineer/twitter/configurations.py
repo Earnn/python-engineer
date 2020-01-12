@@ -7,7 +7,7 @@ ACCESS_TOKEN = "298527382-0oGwXORPIOqXKOMVbogc9JUruAUYhU11bDnOES0r"
 ACCESS_TOKEN_SECRET="toUYWyIU8AUnaLwyuZgaiRDPekKr7VGPTvGoyfxhuvzSI"
 
 
-
+# Authentication to Twitter. 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth,wait_on_rate_limit=True)
