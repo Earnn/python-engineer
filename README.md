@@ -6,6 +6,7 @@ A simple data fetching from twitter.
 
 Before you continue, ensure you meet the following requirements:  
 
+* Installed Python (you can download it via https://www.python.org/downloads/). Note: This project using python 3.7
 * Installed Django
 * Installed djangorestframework
 * Installed tweepy (for using Twitter's API)
