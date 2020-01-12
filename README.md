@@ -1,46 +1,42 @@
 # Tweet's Project
 
-A simple data fetching from twitter
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+A simple data fetching from twitter.
 
 ### Prerequisites
 
-Before you continue, ensure you meet the following requirements:
-	* Installed Django
-	* Installed djangorestframework
-	* Installed tweepy (for using Twitter's API)
-Note: I've provided all of these requirements in requirements.txt 
-	  so you can install it by type command
+Before you continue, ensure you meet the following requirements:  
+
+* Installed Python (you can download it via https://www.python.org/downloads/). Note: This project using python 3.7
+* Installed Django
+* Installed djangorestframework
+* Installed tweepy (for using Twitter's API)
+
+Note: I've provided all of these requirements in requirements.txt so you can install it by type command
 
 ```
 pip install -r requirements.txt
 ```
 
-### Installing
+### Migrations
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+After installed. Next thing that you've to do is migrate project for detecting changed following:
 
 ```
-Give the example
-```
+python manage.py migrate
 
-And repeat
+python manage.py makemigrations
+```
+### Runserver
+
+Now you can run project via:
 
 ```
-until finished
+python manage.py runserver
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Testing for 
-
+Running test for checking whether if the endpoint return corrected data or not. Or if there are any changed in code you can check it via run this test.
 ```
 python manage.py test
 ```
