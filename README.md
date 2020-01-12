@@ -1,6 +1,6 @@
 # Tweet's Project
 
-A simple data fetching from twitter
+A simple data fetching from twitter.
 
 ## Getting Started
 
@@ -28,7 +28,6 @@ After installed. Next thing that you've to do is migrate project for detecting c
 python manage.py migrate
 
 python manage.py makemigrations
-
 ```
 ### Runserver
 
