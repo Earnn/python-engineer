@@ -10,7 +10,6 @@ def get_tweet_by_hashtag(request,hashtag):
 	hashtag = "#"+hashtag.lower()+ " -filter:retweets"
 
 	limit = request.query_params.get('limit',30)
-	print(limit)
 	tweets = configurations.tweepy.Cursor(configurations.api.search,
 		q=hashtag,
 		lang="en",

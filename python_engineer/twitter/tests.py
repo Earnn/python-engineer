@@ -26,9 +26,6 @@ class TwitterTests(APITestCase):
 
     def test_get_correct_user(self):
         response = self.client.get('/users/DavikaH?limit=2', format='json') 
-        print("response ",response.data)
-        # print("dict ",dict(response.data["account"]))
-        print("dict ",response.data["account"])
         isCorrect = True
         for obj in iter(response.data["account"]):
         	if "DavikaH" not in obj["href"]:
