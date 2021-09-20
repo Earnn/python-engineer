@@ -4,6 +4,7 @@ from rest_framework import status
 from rest_framework.test import APITestCase
 
 class TwitterTests(APITestCase):
+
     def test_get_tweets_by_hashtag_api_status_code(self):
         response = self.client.get('/hashtags/Python?limit=20', format='json')
         self.assertEqual(response.status_code, 200)
