@@ -3,3 +3,4 @@ django-extensions==2.2.5
 djangorestframework==3.11.2
 tweepy==3.8.0
 python-dateutil==2.8.2
+pytest-django==4.4.0
